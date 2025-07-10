@@ -1,0 +1,58 @@
+# .NET Core build artifacts
+bin/
+obj/
+out/
+
+# Build results
+*.exe
+*.dll
+*.app
+*.pdb
+*.cache
+*.log
+
+# User secrets and config
+*.secrets.json
+.env
+appsettings.Development.json # if it contains secrets
+
+# Rider & VS Code
+.idea/
+.vscode/
+.vscode/*
+
+# Visual Studio user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS for Mac
+*.userprefs
+
+# ASP.NET Core generated files
+wwwroot/dist/
+wwwroot/node_modules/
+
+# Node (if using React Native or SPA)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test result files
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Publish directory
+publish/
