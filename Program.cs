@@ -18,6 +18,7 @@ var secretKey = Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY");
 var region = Environment.GetEnvironmentVariable("AWS_REGION");
 var userPoolId = Environment.GetEnvironmentVariable("COGNITO_USER_POOL_ID");
 var clientId = Environment.GetEnvironmentVariable("COGNITO_CLIENT_ID");
+var authority = Environment.GetEnvironmentVariable("COGNITO_AUTHORITY");
 
 //Storing aws credentials and region endpoint 
 var awsCredentials = new BasicAWSCredentials(accessKey, secretKey);
@@ -47,10 +48,11 @@ builder.Services.AddAuthentication(options =>
 })
     .AddJwtBearer(options =>
     {
+        options.Authority = authority;
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidIssuer = "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_HZOYi4pmZ",
+            ValidIssuer = authority,
             ValidateAudience = false,
             ValidateLifetime = true,
         };
