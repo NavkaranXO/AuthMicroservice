@@ -14,6 +14,7 @@ out/
 # User secrets and config
 *.secrets.json
 .env
+appsettings.json
 appsettings.Development.json # if it contains secrets
 
 # Rider & VS Code
